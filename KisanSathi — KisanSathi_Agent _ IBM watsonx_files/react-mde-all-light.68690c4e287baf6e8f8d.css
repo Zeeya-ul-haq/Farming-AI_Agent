@@ -1,0 +1,2305 @@
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2022. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-header {
+  background-color: var(--cds-ui-01, #ffffff);
+  margin-bottom: 16px; }
+  .mde-header button:focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-header ul.mde-header-group {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    margin-right: -16px;
+    padding: 0;
+    list-style: none; }
+    .mde-header ul.mde-header-group li.mde-header-item {
+      display: inline-block;
+      position: relative; }
+      .mde-header ul.mde-header-group li.mde-header-item button {
+        text-align: left;
+        cursor: pointer;
+        padding: 4px;
+        margin: 0;
+        border: none;
+        background: none;
+        color: #242729;
+        margin-top: 5px; }
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .mde-header ul.mde-header-group li.mde-header-item button.tooltipped:hover::before {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000001;
+          width: 0;
+          height: 0;
+          color: rgba(0, 0, 0, 0.8);
+          pointer-events: none;
+          content: "";
+          border: 5px solid transparent;
+          top: -5px;
+          right: 50%;
+          bottom: auto;
+          margin-right: -5px;
+          border-top-color: rgba(0, 0, 0, 0.8); }
+        .mde-header ul.mde-header-group li.mde-header-item button.tooltipped:hover::after {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          font-size: 11px;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000000;
+          padding: 5px 8px;
+          color: var(--cds-ui-01, #ffffff);
+          pointer-events: none;
+          content: attr(aria-label);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 3px;
+          right: 50%;
+          bottom: 100%;
+          transform: translateX(50%);
+          margin-bottom: 5px;
+          white-space: nowrap; }
+      .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown {
+        position: absolute;
+        left: -24px;
+        top: 40px;
+        background-color: white;
+        border: 1px solid #c8ccd0;
+        padding: 9px;
+        z-index: 2;
+        transform: translateX(-9px);
+        padding-top: 0px;
+        padding-bottom: 0px; }
+        .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li {
+          margin: 0;
+          white-space: nowrap;
+          list-style: none;
+          display: block;
+          margin-left: -9px;
+          margin-right: -9px;
+          padding: 2px; }
+          .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li:hover {
+            background: var(--cds-brand-01, #0f62fe); }
+          .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button {
+            display: block; }
+            .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p {
+              display: block;
+              margin: 0;
+              padding: 0;
+              font-weight: bold;
+              line-height: 1em;
+              background: none;
+              border: 0;
+              text-align: left; }
+              .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p:hover {
+                color: #F5F7fA; }
+              .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-1 {
+                height: 25px !important;
+                font-size: 20px !important;
+                font-weight: 300 !important; }
+              .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-2 {
+                height: 23px !important;
+                font-size: 18px !important;
+                font-weight: 600 !important; }
+              .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-3 {
+                height: 20px !important;
+                font-size: 16px !important;
+                font-weight: 600 !important; }
+              .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-4 {
+                height: 18px !important;
+                font-size: 14px !important;
+                font-weight: 600 !important; }
+        .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 8px solid transparent;
+          border-bottom-color: rgba(0, 0, 0, 0.15);
+          top: -16px;
+          left: 50px;
+          transform: translateX(50%); }
+        .mde-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 7px solid transparent;
+          border-bottom-color: white;
+          top: -14px;
+          left: 52px;
+          transform: translateX(50%); }
+  .mde-header .editDisplayButton.active {
+    height: 18px !important;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-brand-01, #0f62fe) !important;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-bottom: 2px solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-color: var(--cds-brand-01, #0f62fe) !important;
+    padding-bottom: 24px !important;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    width: 56px;
+    text-align: center !important;
+    margin-left: -11px !important;
+    padding-left: 3px !important;
+    margin-right: -6px !important; }
+  .mde-header .editDisplayButton {
+    height: 18px !important;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-text-01, #161616) !important;
+    cursor: pointer;
+    width: 56px;
+    text-align: center !important; }
+  .mde-header .editDisplayButton.focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-header .previewDisplayButton {
+    height: 18px !important;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-text-01, #161616) !important;
+    cursor: pointer;
+    width: 70px;
+    text-align: center !important; }
+  .mde-header .previewDisplayButton.active {
+    height: 18px !important;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-brand-01, #0f62fe) !important;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-bottom: 2px solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-color: var(--cds-brand-01, #0f62fe) !important;
+    padding-bottom: 24px !important;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    width: 70px;
+    text-align: center !important; }
+  .mde-header .previewDisplayButton.focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-header img {
+    height: 18px;
+    margin-top: 3px; }
+  .mde-header .unorderedListImage,
+  .mde-header .taskListImage,
+  .mde-header .orderedListImage {
+    height: 16px;
+    margin-top: 0px; }
+  .mde-header .boldImage,
+  .mde-header .italicImage,
+  .mde-header .subImage {
+    margin-bottom: -4px;
+    height: 22px; }
+  .mde-header .italicImage {
+    margin-left: -1px;
+    margin-right: -1px; }
+  .mde-header .quoteImage,
+  .mde-header .codeImage {
+    margin-bottom: -3px; }
+  .mde-header .headerImage {
+    height: 21px;
+    margin-bottom: -4px; }
+  .mde-header .carbonCarrat {
+    margin-left: 7px; }
+    .mde-header .carbonCarrat > path {
+      fill: var(--cds-brand-01, #0f62fe) !important; }
+  .mde-header button:disabled,
+  .mde-header button[disabled] {
+    opacity: 0.8;
+    pointer-events: none; }
+
+.mde-header > .mde-header-group ~ .mde-header-group {
+  float: right; }
+
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2022. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-text {
+  overflow-y: scroll;
+  max-width: 878px;
+  height: 430px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--cds-ui-01, #ffffff);
+  border: solid 1px var(--cds-ui-04, #8d8d8d);
+  position: relative; }
+  .mde-text .public-DraftEditor-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    overflow-y: scroll;
+    max-width: 878px;
+    height: 430px; }
+
+.mde-editor-header {
+  background-color: var(--cds-ui-01, #ffffff); }
+  .mde-editor-header button:focus {
+    outline: 0; }
+  .mde-editor-header ul.mde-header-group {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    margin-right: -16px;
+    padding: 0;
+    list-style: none; }
+    .mde-editor-header ul.mde-header-group li.mde-header-item {
+      display: inline-block;
+      position: relative;
+      height: 40px;
+      vertical-align: middle; }
+      .mde-editor-header ul.mde-header-group li.mde-header-item button {
+        text-align: left;
+        cursor: pointer;
+        padding: 4px;
+        margin: 0;
+        border: none;
+        background: none;
+        color: #242729; }
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .mde-editor-header ul.mde-header-group li.mde-header-item button.tooltipped:hover::before {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000001;
+          width: 0;
+          height: 0;
+          color: rgba(0, 0, 0, 0.8);
+          pointer-events: none;
+          content: "";
+          border: 5px solid transparent;
+          top: -5px;
+          right: 50%;
+          bottom: auto;
+          margin-right: -5px;
+          border-top-color: rgba(0, 0, 0, 0.8); }
+        .mde-editor-header ul.mde-header-group li.mde-header-item button.tooltipped:hover::after {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          font-size: 11px;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000000;
+          padding: 5px 8px;
+          color: var(--cds-ui-01, #ffffff);
+          pointer-events: none;
+          content: attr(aria-label);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 3px;
+          right: 50%;
+          bottom: 100%;
+          transform: translateX(50%);
+          margin-bottom: 5px;
+          white-space: nowrap; }
+        .mde-editor-header ul.mde-header-group li.mde-header-item button:focus {
+          outline: 2px var(--cds-focus, #0f62fe) solid; }
+      .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown {
+        position: absolute;
+        left: -24px;
+        top: 40px;
+        background-color: white;
+        border: 1px solid #c8ccd0;
+        padding: 9px;
+        z-index: 2;
+        transform: translateX(-9px);
+        padding-top: 0px;
+        padding-bottom: 0px; }
+        .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li {
+          margin: 0;
+          white-space: nowrap;
+          list-style: none;
+          display: block;
+          margin-left: -9px;
+          margin-right: -9px;
+          padding: 2px; }
+          .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li:hover {
+            background: var(--cds-brand-01, #0f62fe); }
+          .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button {
+            display: block; }
+            .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p {
+              display: block;
+              margin: 0;
+              padding: 0;
+              font-weight: bold;
+              line-height: 1em;
+              background: none;
+              border: 0;
+              text-align: left; }
+              .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p:hover {
+                color: #F5F7fA; }
+              .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-1 {
+                height: 25px !important;
+                font-size: 20px !important;
+                font-weight: 300 !important; }
+              .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-2 {
+                height: 23px !important;
+                font-size: 18px !important;
+                font-weight: 600 !important; }
+              .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-3 {
+                height: 20px !important;
+                font-size: 16px !important;
+                font-weight: 600 !important; }
+              .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-4 {
+                height: 18px !important;
+                font-size: 14px !important;
+                font-weight: 600 !important; }
+        .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 8px solid transparent;
+          border-bottom-color: rgba(0, 0, 0, 0.15);
+          top: -16px;
+          left: 50px;
+          transform: translateX(50%); }
+        .mde-editor-header ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 7px solid transparent;
+          border-bottom-color: white;
+          top: -14px;
+          left: 52px;
+          transform: translateX(50%); }
+  .mde-editor-header .editDisplayButton_light.active {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-brand-01, #0f62fe) !important;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-bottom: 2px solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-color: var(--cds-brand-01, #0f62fe) !important;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    width: 125px;
+    text-align: center !important; }
+  .mde-editor-header .editDisplayButton_light {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-text-01, #161616) !important;
+    cursor: pointer;
+    width: 125px;
+    text-align: center !important; }
+  .mde-editor-header .editDisplayButton_light.focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-editor-header .previewDisplayButton_light {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-text-01, #161616) !important;
+    cursor: pointer;
+    width: 125px;
+    text-align: center !important; }
+  .mde-editor-header .previewDisplayButton_light.active {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-brand-01, #0f62fe) !important;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-bottom: 2px solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-color: var(--cds-brand-01, #0f62fe) !important;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    width: 125px;
+    text-align: center !important; }
+  .mde-editor-header .previewDisplayButton_light.focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-editor-header img {
+    height: 16px;
+    width: 16px;
+    margin: 8px; }
+  .mde-editor-header .unorderedListImage,
+  .mde-editor-header .taskListImage,
+  .mde-editor-header .orderedListImage {
+    height: 16px;
+    margin-top: 0px; }
+  .mde-editor-header .boldImage,
+  .mde-editor-header .italicImage,
+  .mde-editor-header .subImage {
+    margin-bottom: -4px;
+    height: 22px; }
+  .mde-editor-header .italicImage {
+    margin-left: -1px;
+    margin-right: -1px; }
+  .mde-editor-header .quoteImage,
+  .mde-editor-header .codeImage {
+    margin-bottom: -3px; }
+  .mde-editor-header .headerImage {
+    height: 21px;
+    margin-bottom: -4px; }
+  .mde-editor-header .carbonCarrat {
+    margin-left: 7px; }
+  .mde-editor-header button:disabled,
+  .mde-editor-header button[disabled] {
+    opacity: 0.8;
+    pointer-events: none; }
+
+.DraftEditor-editorContainer {
+  font-family: IBM Plex Sans;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal; }
+
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-text_light {
+  overflow-y: scroll;
+  max-width: 878px;
+  height: 430px;
+  background-color: var(--cds-ui-01, #ffffff);
+  border: solid 1px var(--cds-ui-03, #e0e0e0);
+  position: relative; }
+  .mde-text_light .public-DraftEditor-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    overflow-y: scroll;
+    max-width: 878px;
+    height: 430px; }
+
+.mde-editor-header_light {
+  background-color: var(--cds-ui-01, #ffffff);
+  border-bottom: 1px solid var(--cds-ui-03, #e0e0e0);
+  display: flex; }
+  .mde-editor-header_light button:focus {
+    outline: 0; }
+  .mde-editor-header_light .mde-editor-groups {
+    flex: 2;
+    padding-left: 16px; }
+  .mde-editor-header_light .mde-editor-markdown {
+    display: flex;
+    align-items: center;
+    padding-right: 16px; }
+    .mde-editor-header_light .mde-editor-markdown > div {
+      padding-left: 8px; }
+  .mde-editor-header_light ul.mde-header-group {
+    display: inline-block;
+    padding: 0;
+    list-style: none;
+    border-right: 1px solid var(--cds-ui-03, #e0e0e0); }
+    .mde-editor-header_light ul.mde-header-group li.mde-header-item {
+      display: inline-block;
+      position: relative; }
+      .mde-editor-header_light ul.mde-header-group li.mde-header-item button {
+        text-align: left;
+        cursor: pointer;
+        margin: 0;
+        border: none;
+        background: none;
+        color: #242729; }
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .mde-editor-header_light ul.mde-header-group li.mde-header-item button.tooltipped:hover::before {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000001;
+          width: 0;
+          height: 0;
+          color: rgba(0, 0, 0, 0.8);
+          pointer-events: none;
+          content: "";
+          border: 5px solid transparent;
+          top: -5px;
+          right: 50%;
+          bottom: auto;
+          margin-right: -5px;
+          border-top-color: rgba(0, 0, 0, 0.8); }
+        .mde-editor-header_light ul.mde-header-group li.mde-header-item button.tooltipped:hover::after {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          font-size: 11px;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000000;
+          padding: 5px 8px;
+          pointer-events: none;
+          content: attr(aria-label);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 3px;
+          right: 50%;
+          bottom: 100%;
+          transform: translateX(50%);
+          margin-bottom: 5px;
+          white-space: nowrap; }
+        .mde-editor-header_light ul.mde-header-group li.mde-header-item button:focus {
+          outline: 2px var(--cds-focus, #0f62fe) solid; }
+      .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown {
+        position: absolute;
+        left: 24px;
+        top: 30px;
+        background-color: white;
+        border: 1px solid #c8ccd0;
+        padding: 9px;
+        z-index: 2;
+        transform: translateX(-9px);
+        padding-top: 0px;
+        padding-bottom: 0px; }
+        .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li {
+          margin: 0;
+          white-space: nowrap;
+          list-style: none;
+          display: block;
+          margin-left: -9px;
+          margin-right: -9px;
+          padding: 2px; }
+          .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li:hover {
+            background: var(--cds-ui-02, #f4f4f4); }
+          .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button {
+            display: block; }
+            .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p {
+              display: block;
+              margin: 0;
+              padding: 0;
+              font-weight: bold;
+              line-height: 1em;
+              background: none;
+              border: 0;
+              text-align: left; }
+              .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p:hover {
+                color: #F5F7fA; }
+              .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-1 {
+                height: 25px !important;
+                font-size: 20px !important;
+                font-weight: 300 !important; }
+              .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-2 {
+                height: 23px !important;
+                font-size: 18px !important;
+                font-weight: 600 !important; }
+              .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-3 {
+                height: 20px !important;
+                font-size: 16px !important;
+                font-weight: 600 !important; }
+              .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-4 {
+                height: 18px !important;
+                font-size: 14px !important;
+                font-weight: 600 !important; }
+        .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 8px solid transparent;
+          border-bottom-color: rgba(0, 0, 0, 0.15);
+          top: -16px; }
+        .mde-editor-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 8px solid transparent;
+          border-bottom-color: white;
+          top: -14px; }
+  .mde-editor-header_light img {
+    height: 16px;
+    width: 16px;
+    margin: 8px; }
+  .mde-editor-header_light button:disabled,
+  .mde-editor-header_light button[disabled] {
+    opacity: 0.8;
+    pointer-events: none; }
+
+.DraftEditor-editorContainer_light {
+  font-family: IBM Plex Sans;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal; }
+
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2022. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-preview .mde-preview-content {
+  padding: 20px 20px 20px 20px;
+  width: 858px;
+  height: 430px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--cds-ui-01, #ffffff);
+  border: solid 1px #DfE3E6;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-y: scroll;
+  word-wrap: break-word; }
+  .mde-preview .mde-preview-content p, .mde-preview .mde-preview-content blockquote, .mde-preview .mde-preview-content ul, .mde-preview .mde-preview-content dl, .mde-preview .mde-preview-content ol, .mde-preview .mde-preview-content table, .mde-preview .mde-preview-content pre {
+    margin-top: 0;
+    margin-bottom: 16px; }
+  .mde-preview .mde-preview-content ol {
+    list-style-type: decimal; }
+  .mde-preview .mde-preview-content ul {
+    list-style-type: disc; }
+  .mde-preview .mde-preview-content h1, .mde-preview .mde-preview-content h2 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+    font-family: IBM Plex Sans; }
+  .mde-preview .mde-preview-content h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview .mde-preview-content h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview .mde-preview-content h3 {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview .mde-preview-content h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview .mde-preview-content h5 {
+    display: block;
+    font-size: 0.83em;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview .mde-preview-content h6 {
+    display: block;
+    font-size: 0.67em;
+    -webkit-margin-before: 2.33em;
+    -webkit-margin-after: 2.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview .mde-preview-content ul, .mde-preview .mde-preview-content ol {
+    padding-left: 2em; }
+  .mde-preview .mde-preview-content blockquote {
+    margin-left: 0;
+    padding: 0 1em;
+    color: #777;
+    border-left: 0.25em solid #ddd; }
+    .mde-preview .mde-preview-content blockquote > :first-child {
+      margin-top: 0; }
+    .mde-preview .mde-preview-content blockquote > :last-child {
+      margin-bottom: 0; }
+  .mde-preview .mde-preview-content code {
+    padding: 0.2em 0 0.2em 0;
+    margin: 0;
+    font-size: 90%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 3px; }
+    .mde-preview .mde-preview-content code::before, .mde-preview .mde-preview-content code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0"; }
+  .mde-preview .mde-preview-content pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px; }
+    .mde-preview .mde-preview-content pre code {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0; }
+      .mde-preview .mde-preview-content pre code::before, .mde-preview .mde-preview-content pre code::after {
+        content: none; }
+    .mde-preview .mde-preview-content pre > code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0; }
+  .mde-preview .mde-preview-content a {
+    color: var(--cds-brand-01, #0f62fe);
+    text-decoration: none; }
+    .mde-preview .mde-preview-content a:hover {
+      text-decoration: underline; }
+  .mde-preview .mde-preview-content > *:first-child {
+    margin-top: 0 !important; }
+  .mde-preview .mde-preview-content > *:last-child {
+    margin-bottom: 0 !important; }
+  .mde-preview .mde-preview-content::after {
+    display: table;
+    clear: both;
+    content: ""; }
+  .mde-preview .mde-preview-content table {
+    display: block;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse; }
+    .mde-preview .mde-preview-content table thead th {
+      font-weight: bold; }
+    .mde-preview .mde-preview-content table th, .mde-preview .mde-preview-content table td {
+      padding: 6px 13px;
+      border: 1px solid #c8ccd0; }
+
+.mde-preview-content {
+  font-family: IBM Plex Sans; }
+
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2022. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-only-preview .mde-only-preview-content {
+  padding: 20px 20px 20px 20px;
+  width: 858px;
+  min-height: 430px;
+  width: 100%;
+  word-wrap: break-word;
+  margin-left: -11px; }
+  .mde-only-preview .mde-only-preview-content p, .mde-only-preview .mde-only-preview-content blockquote, .mde-only-preview .mde-only-preview-content ul, .mde-only-preview .mde-only-preview-content ol, .mde-only-preview .mde-only-preview-content dl, .mde-only-preview .mde-only-preview-content table, .mde-only-preview .mde-only-preview-content pre {
+    margin-top: 0;
+    margin-bottom: 16px; }
+  .mde-only-preview .mde-only-preview-content ol {
+    list-style-type: decimal; }
+  .mde-only-preview .mde-only-preview-content ul {
+    list-style-type: disc; }
+  .mde-only-preview .mde-only-preview-content h1, .mde-only-preview .mde-only-preview-content h2 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview .mde-only-preview-content h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview .mde-only-preview-content h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview .mde-only-preview-content h3 {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview .mde-only-preview-content h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview .mde-only-preview-content h5 {
+    display: block;
+    font-size: 0.83em;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview .mde-only-preview-content h6 {
+    display: block;
+    font-size: 0.67em;
+    -webkit-margin-before: 2.33em;
+    -webkit-margin-after: 2.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview .mde-only-preview-content ul, .mde-only-preview .mde-only-preview-content ol {
+    padding-left: 2em; }
+  .mde-only-preview .mde-only-preview-content blockquote {
+    margin-left: 0;
+    padding: 0 1em;
+    color: #777;
+    border-left: 0.25em solid #ddd; }
+    .mde-only-preview .mde-only-preview-content blockquote > :first-child {
+      margin-top: 0; }
+    .mde-only-preview .mde-only-preview-content blockquote > :last-child {
+      margin-bottom: 0; }
+  .mde-only-preview .mde-only-preview-content code {
+    padding: 0.2em 0 0.2em 0;
+    margin: 0;
+    font-size: 90%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 3px; }
+    .mde-only-preview .mde-only-preview-content code::before, .mde-only-preview .mde-only-preview-content code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0"; }
+  .mde-only-preview .mde-only-preview-content pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px; }
+    .mde-only-preview .mde-only-preview-content pre code {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0; }
+      .mde-only-preview .mde-only-preview-content pre code::before, .mde-only-preview .mde-only-preview-content pre code::after {
+        content: none; }
+    .mde-only-preview .mde-only-preview-content pre > code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0; }
+  .mde-only-preview .mde-only-preview-content a {
+    color: var(--cds-brand-01, #0f62fe);
+    text-decoration: none; }
+    .mde-only-preview .mde-only-preview-content a:hover {
+      text-decoration: underline; }
+  .mde-only-preview .mde-only-preview-content > *:first-child {
+    margin-top: 0 !important; }
+  .mde-only-preview .mde-only-preview-content > *:last-child {
+    margin-bottom: 0 !important; }
+  .mde-only-preview .mde-only-preview-content::after {
+    display: table;
+    clear: both;
+    content: ""; }
+  .mde-only-preview .mde-only-preview-content table {
+    display: block;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse; }
+    .mde-only-preview .mde-only-preview-content table thead th {
+      font-weight: bold; }
+    .mde-only-preview .mde-only-preview-content table th, .mde-only-preview .mde-only-preview-content table td {
+      padding: 6px 13px;
+      border: 1px solid #c8ccd0; }
+
+.mde-preview-content {
+  font-family: IBM Plex Sans; }
+
+.react-mde-no-preview-layout .mde-text {
+  border-bottom: none; }
+
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-header_light {
+  background-color: var(--cds-ui-01, #ffffff);
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--cds-ui-03, #e0e0e0); }
+  .mde-header_light button:focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-header_light ul.mde-header-group {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    margin-right: -16px;
+    padding: 0;
+    list-style: none; }
+    .mde-header_light ul.mde-header-group li.mde-header-item {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle; }
+      .mde-header_light ul.mde-header-group li.mde-header-item button {
+        height: 40px;
+        text-align: left;
+        cursor: pointer;
+        margin: 0;
+        border: none;
+        background: none;
+        color: #242729;
+        margin-top: 5px; }
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .mde-header_light ul.mde-header-group li.mde-header-item button.tooltipped:hover::before {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000001;
+          width: 0;
+          height: 0;
+          color: rgba(0, 0, 0, 0.8);
+          pointer-events: none;
+          content: "";
+          border: 5px solid transparent;
+          top: -5px;
+          right: 50%;
+          bottom: auto;
+          margin-right: -5px;
+          border-top-color: rgba(0, 0, 0, 0.8); }
+        .mde-header_light ul.mde-header-group li.mde-header-item button.tooltipped:hover::after {
+          animation-name: tooltip-appear;
+          animation-duration: 0.2s;
+          animation-delay: 0.5s;
+          animation-fill-mode: forwards;
+          font-size: 11px;
+          opacity: 0;
+          position: absolute;
+          z-index: 1000000;
+          padding: 5px 8px;
+          color: var(--cds-ui-01, #ffffff);
+          pointer-events: none;
+          content: attr(aria-label);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 3px;
+          right: 50%;
+          bottom: 100%;
+          transform: translateX(50%);
+          margin-bottom: 5px;
+          white-space: nowrap; }
+      .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown {
+        position: absolute;
+        left: -24px;
+        top: 40px;
+        background-color: white;
+        border: 1px solid #c8ccd0;
+        padding: 9px;
+        z-index: 2;
+        transform: translateX(-9px);
+        padding-top: 0px;
+        padding-bottom: 0px; }
+        .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li {
+          margin: 0;
+          white-space: nowrap;
+          list-style: none;
+          display: block;
+          margin-left: -9px;
+          margin-right: -9px;
+          padding: 2px; }
+          .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li:hover {
+            background: var(--cds-brand-01, #0f62fe); }
+          .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button {
+            display: block; }
+            .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p {
+              display: block;
+              margin: 0;
+              padding: 0;
+              font-weight: bold;
+              line-height: 1em;
+              background: none;
+              border: 0;
+              text-align: left; }
+              .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p:hover {
+                color: #F5F7fA; }
+              .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-1 {
+                height: 25px !important;
+                font-size: 20px !important;
+                font-weight: 300 !important; }
+              .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-2 {
+                height: 23px !important;
+                font-size: 18px !important;
+                font-weight: 600 !important; }
+              .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-3 {
+                height: 20px !important;
+                font-size: 16px !important;
+                font-weight: 600 !important; }
+              .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown li button p.header-4 {
+                height: 18px !important;
+                font-size: 14px !important;
+                font-weight: 600 !important; }
+        .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 8px solid transparent;
+          border-bottom-color: rgba(0, 0, 0, 0.15);
+          top: -16px;
+          left: 50px;
+          transform: translateX(50%); }
+        .mde-header_light ul.mde-header-group li.mde-header-item ul.react-mde-dropdown::after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: 7px solid transparent;
+          border-bottom-color: white;
+          top: -14px;
+          left: 52px;
+          transform: translateX(50%); }
+  .mde-header_light .editDisplayButton_light.active {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-brand-01, #0f62fe) !important;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-bottom: 2px solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-color: var(--cds-brand-01, #0f62fe) !important;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    width: 125px;
+    text-align: center !important; }
+  .mde-header_light .editDisplayButton_light {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-text-01, #161616) !important;
+    cursor: pointer;
+    width: 125px;
+    text-align: center !important; }
+  .mde-header_light .editDisplayButton_light.focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-header_light .previewDisplayButton_light {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-text-01, #161616) !important;
+    cursor: pointer;
+    width: 125px;
+    text-align: center !important; }
+  .mde-header_light .previewDisplayButton_light.active {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left !important;
+    color: var(--cds-brand-01, #0f62fe) !important;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-bottom: 2px solid !important;
+    border-bottom-width: 2px !important;
+    border-bottom-color: var(--cds-brand-01, #0f62fe) !important;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    width: 125px;
+    text-align: center !important; }
+  .mde-header_light .previewDisplayButton_light.focus {
+    outline: 2px var(--cds-focus, #0f62fe) solid; }
+  .mde-header_light img {
+    height: 16px;
+    width: 16px;
+    margin: 8px; }
+  .mde-header_light .unorderedListImage,
+  .mde-header_light .taskListImage,
+  .mde-header_light .orderedListImage {
+    height: 16px;
+    margin-top: 0px; }
+  .mde-header_light .boldImage,
+  .mde-header_light .italicImage,
+  .mde-header_light .subImage {
+    margin-bottom: -4px;
+    height: 22px; }
+  .mde-header_light .italicImage {
+    margin-left: -1px;
+    margin-right: -1px; }
+  .mde-header_light .quoteImage,
+  .mde-header_light .codeImage {
+    margin-bottom: -3px; }
+  .mde-header_light .headerImage {
+    height: 21px;
+    margin-bottom: -4px; }
+  .mde-header_light .carbonCarrat {
+    margin-left: 7px; }
+  .mde-header_light button:disabled,
+  .mde-header_light button[disabled] {
+    opacity: 0.8;
+    pointer-events: none; }
+
+.mde-header > .mde-header-group ~ .mde-header-group {
+  float: right; }
+
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-preview-content-light {
+  padding: 20px 20px 20px 20px;
+  width: 858px;
+  height: 430px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--cds-ui-01, #ffffff);
+  border: solid 1px #DfE3E6;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-y: scroll;
+  word-wrap: break-word; }
+  .mde-preview-content-light p, .mde-preview-content-light blockquote, .mde-preview-content-light ul, .mde-preview-content-light dl, .mde-preview-content-light table, .mde-preview-content-light ol, .mde-preview-content-light pre {
+    margin-top: 0;
+    margin-bottom: 16px; }
+  .mde-preview-content-light ol {
+    list-style-type: decimal; }
+  .mde-preview-content-light ul {
+    list-style-type: disc; }
+  .mde-preview-content-light h1, .mde-preview-content-light h2 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+    font-family: IBM Plex Sans; }
+  .mde-preview-content-light h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview-content-light h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview-content-light h3 {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview-content-light h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview-content-light h5 {
+    display: block;
+    font-size: 0.83em;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview-content-light h6 {
+    display: block;
+    font-size: 0.67em;
+    -webkit-margin-before: 2.33em;
+    -webkit-margin-after: 2.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-preview-content-light ul, .mde-preview-content-light ol {
+    padding-left: 2em; }
+  .mde-preview-content-light blockquote {
+    margin-left: 0;
+    padding: 0 1em;
+    color: #777;
+    border-left: 0.25em solid #ddd; }
+    .mde-preview-content-light blockquote > :first-child {
+      margin-top: 0; }
+    .mde-preview-content-light blockquote > :last-child {
+      margin-bottom: 0; }
+  .mde-preview-content-light code {
+    padding: 0.2em 0 0.2em 0;
+    margin: 0;
+    font-size: 90%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 3px; }
+    .mde-preview-content-light code::before, .mde-preview-content-light code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0"; }
+  .mde-preview-content-light pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px; }
+    .mde-preview-content-light pre code {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0; }
+      .mde-preview-content-light pre code::before, .mde-preview-content-light pre code::after {
+        content: none; }
+    .mde-preview-content-light pre > code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0; }
+  .mde-preview-content-light a {
+    color: var(--cds-brand-01, #0f62fe);
+    text-decoration: none; }
+    .mde-preview-content-light a:hover {
+      text-decoration: underline; }
+  .mde-preview-content-light > *:first-child {
+    margin-top: 0 !important; }
+  .mde-preview-content-light > *:last-child {
+    margin-bottom: 0 !important; }
+  .mde-preview-content-light::after {
+    display: table;
+    clear: both;
+    content: ""; }
+  .mde-preview-content-light table {
+    display: block;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse; }
+    .mde-preview-content-light table thead th {
+      font-weight: bold; }
+    .mde-preview-content-light table th, .mde-preview-content-light table td {
+      padding: 6px 13px;
+      border: 1px solid #c8ccd0; }
+
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2020. All Rights Reserved.
+ *
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+/**
+ * Necessary Evil Warning | Removing logs from Carbon 10
+ *
+ * A carbon 10 grid scss file outputs a warning for setting the grid-columns-16 feature.
+ * Because our application stack is setup in a per-component scss file way,
+ * we are experiencing warnings per file when running webpack.
+ * To get around this, we set this flag to remove the use of @warn
+ */
+/* Core colour tokens */
+/* Interactive color tokens */
+/* Backwards compatibility */
+/* nav header constants carbon 10*/
+:export {
+  uiBackground: var(--cds-ui-background, #f4f4f4);
+  interactive01: var(--cds-interactive-01, #0f62fe);
+  interactive02: var(--cds-interactive-02, #393939);
+  interactive03: var(--cds-interactive-03, #0f62fe);
+  interactive04: var(--cds-interactive-04, #0f62fe);
+  danger: var(--cds-danger, #da1e28);
+  ui01: var(--cds-ui-01, #ffffff);
+  ui02: var(--cds-ui-02, #f4f4f4);
+  ui03: var(--cds-ui-03, #e0e0e0);
+  ui04: var(--cds-ui-04, #8d8d8d);
+  ui05: var(--cds-ui-05, #161616);
+  text01: var(--cds-text-01, #161616);
+  text02: var(--cds-text-02, #525252);
+  text03: var(--cds-text-03, #a8a8a8);
+  text04: var(--cds-text-04, #ffffff);
+  text05: var(--cds-text-05, #6f6f6f);
+  link01: var(--cds-link-01, #0f62fe);
+  inverseLink: var(--cds-inverse-link, #78a9ff);
+  icon01: var(--cds-icon-01, #161616);
+  icon02: var(--cds-icon-02, #525252);
+  icon03: var(--cds-icon-03, #ffffff);
+  field01: var(--cds-field-01, #ffffff);
+  field02: var(--cds-field-02, #f4f4f4);
+  inverse01: var(--cds-inverse-01, #ffffff);
+  inverse02: var(--cds-inverse-02, #393939);
+  support01: var(--cds-support-01, #da1e28);
+  support02: var(--cds-support-02, #198038);
+  support03: var(--cds-support-03, #f1c21b);
+  support04: var(--cds-support-04, #0043ce);
+  inverseSupport01: var(--cds-inverse-support-01, #fa4d56);
+  inverseSupport02: var(--cds-inverse-support-02, #42be65);
+  inverseSupport03: var(--cds-inverse-support-03, #f1c21b);
+  inverseSupport04: var(--cds-inverse-support-04, #4589ff);
+  overlay01: var(--cds-overlay-01, rgba(22, 22, 22, 0.5));
+  focus: var(--cds-focus, #0f62fe);
+  inverseFocusUi: var(--cds-inverse-focus-ui, #ffffff);
+  hoverPrimary: var(--cds-hover-primary, #0353e9);
+  hoverPrimaryText: var(--cds-hover-primary-text, #0043ce);
+  hoverSecondary: var(--cds-hover-secondary, #4c4c4c);
+  hoverTertiary: var(--cds-hover-tertiary, #0353e9);
+  hoverUi: var(--cds-hover-ui, #e5e5e5);
+  hoverSelectedUi: var(--cds-hover-selected-ui, #cacaca);
+  hoverDanger: var(--cds-hover-danger, #b81921);
+  hoverRow: var(--cds-hover-row, #e5e5e5);
+  inverseHoverUi: var(--cds-inverse-hover-ui, #4c4c4c);
+  activePrimary: var(--cds-active-primary, #002d9c);
+  activeSecondary: var(--cds-active-secondary, #6f6f6f);
+  activeTertiary: var(--cds-active-tertiary, #002d9c);
+  activeUi: var(--cds-active-ui, #c6c6c6);
+  activeDanger: var(--cds-active-danger, #750e13);
+  selectedUi: var(--cds-selected-ui, #e0e0e0);
+  highlight: var(--cds-highlight, #d0e2ff);
+  skeleton01: var(--cds-skeleton-01, #e5e5e5);
+  skeleton02: var(--cds-skeleton-02, #c6c6c6);
+  visitedLink: var(--cds-visited-link, #8a3ffc);
+  disabled01: var(--cds-disabled-01, #ffffff);
+  disabled02: var(--cds-disabled-02, #c6c6c6);
+  disabled03: var(--cds-disabled-03, #8d8d8d);
+  brand01: var(--cds-brand-01, #0f62fe);
+  brand02: var(--cds-brand-02, #393939);
+  brand03: var(--cds-brand-03, #0f62fe);
+  selected: #e0e0e0;
+  dapNavHeight: 48px;
+  dapNavActionbarHeight: 88px; }
+
+.mde-only-preview-content-light {
+  width: 858px;
+  min-height: 430px;
+  width: 100%;
+  word-wrap: break-word;
+  padding: 16px; }
+  .mde-only-preview-content-light p, .mde-only-preview-content-light blockquote, .mde-only-preview-content-light ul, .mde-only-preview-content-light ol, .mde-only-preview-content-light dl, .mde-only-preview-content-light table, .mde-only-preview-content-light pre {
+    margin-top: 0;
+    margin-bottom: 16px; }
+  .mde-only-preview-content-light ol {
+    list-style-type: decimal; }
+  .mde-only-preview-content-light ul {
+    list-style-type: disc; }
+  .mde-only-preview-content-light h1, .mde-only-preview-content-light h2 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview-content-light h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview-content-light h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview-content-light h3 {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview-content-light h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview-content-light h5 {
+    display: block;
+    font-size: 0.83em;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview-content-light h6 {
+    display: block;
+    font-size: 0.67em;
+    -webkit-margin-before: 2.33em;
+    -webkit-margin-after: 2.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-family: IBM Plex Sans; }
+  .mde-only-preview-content-light ul, .mde-only-preview-content-light ol {
+    padding-left: 2em; }
+  .mde-only-preview-content-light blockquote {
+    margin-left: 0;
+    padding: 0 1em;
+    color: #777;
+    border-left: 0.25em solid #ddd; }
+    .mde-only-preview-content-light blockquote > :first-child {
+      margin-top: 0; }
+    .mde-only-preview-content-light blockquote > :last-child {
+      margin-bottom: 0; }
+  .mde-only-preview-content-light code {
+    padding: 0.2em 0 0.2em 0;
+    margin: 0;
+    font-size: 90%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 3px; }
+    .mde-only-preview-content-light code::before, .mde-only-preview-content-light code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0"; }
+  .mde-only-preview-content-light pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px; }
+    .mde-only-preview-content-light pre code {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0; }
+      .mde-only-preview-content-light pre code::before, .mde-only-preview-content-light pre code::after {
+        content: none; }
+    .mde-only-preview-content-light pre > code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0; }
+  .mde-only-preview-content-light a {
+    color: var(--cds-interactive-01, #0f62fe);
+    text-decoration: none; }
+    .mde-only-preview-content-light a:hover {
+      text-decoration: underline; }
+  .mde-only-preview-content-light > *:first-child {
+    margin-top: 0 !important; }
+  .mde-only-preview-content-light > *:last-child {
+    margin-bottom: 0 !important; }
+  .mde-only-preview-content-light::after {
+    display: table;
+    clear: both;
+    content: ""; }
+  .mde-only-preview-content-light table {
+    display: block;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse; }
+    .mde-only-preview-content-light table thead th {
+      font-weight: bold; }
+    .mde-only-preview-content-light table th, .mde-only-preview-content-light table td {
+      padding: 6px 13px;
+      border: 1px solid #c8ccd0; }
